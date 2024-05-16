@@ -12,7 +12,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
-    <title>{{ config('app.name', 'AZWeb') }}</title>
+    @hasSection('title')
+        <title>{{ $title }}</title>
+    @else
+        <title>{{ config('app.name', 'AZWeb') }}</title>
+    @endif
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,24 +40,15 @@
 </head>
 
 <body style="min-height: 100vh; min-width: 100vw">
-    <!-- Preloader -->
-    @include('layout.preloader')
-    <!-- Offcanvas area -->
-    @include('layout.off_canvas_area')
-    <!-- Header -->
-    @include('layout.header')
-    <!-- Main content -->
+    @include('layout.components.header')
+    @include('layout.components.off_canvas')
     @yield('content')
-    <!-- Footer -->
-    @include('layout.footer')
-    <!-- Back to top -->
-    @include('layout.back_to_top')
     <!-- Scripts -->
     {{--    <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script> --}}
     {{--    <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script> --}}
     {{--    <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script> --}}
     {{--    <script src="{{ asset('ckeditor5-36.0.1-8lty87utdzw3/build/ckeditor.js') }}"></script> --}}
-    <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>
+    {{--    <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script> --}}
     <script src="{{ asset('template/js/vendor/modernizr-3.11.7.min.js') }}"></script>
     <script src="{{ asset('template/js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('template/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>

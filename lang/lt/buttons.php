@@ -2,7 +2,7 @@
 
 return [
     // Guest
-    'contactUs' => 'Susisiekite su mumis',
+    'contactUs' => 'Susisiekite',
     'services' => 'Paslaugos',
     'send' => 'Siųsti',
 

@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(PageService $pService, ContactService $cService): void
     {
-        // URL::forceScheme('https');
+        if (config('app.env') == 'production')
+            URL::forceScheme('https');
 
         if (!str_contains(url()->current(), 'admin')) {
             View::composer('*', function ($view) use ($pService, $cService) {
