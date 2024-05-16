@@ -18,8 +18,8 @@
                                     {{ __('pages.mainTitle') }}
                                 </h2>
                                 <!--<div class="banner5-text wow fadeInUp mb-115" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                                                        <p>UAB "Solita" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas. </p>
-                                                    </div>-->
+                                                            <p>UAB "Solita" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas. </p>
+                                                        </div>-->
                                 <div class="banner5-btn wow fadeInUp" data-wow-delay=".9s"
                                     style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
                                     <div class="et-btn-5">
@@ -65,11 +65,3 @@
         </section>
     </main>
 @endsection
-
-@push('scripts')
-    <script>
-        const h4 = document.querySelector('.about__description-text').querySelector('h4')
-
-        h4.classList.add('pb-10')
-    </script>
-@endpush
