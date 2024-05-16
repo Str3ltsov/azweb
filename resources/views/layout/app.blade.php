@@ -43,6 +43,7 @@
     @include('layout.components.header')
     @include('layout.components.off_canvas')
     @yield('content')
+    @include('layout.components.footer')
     <!-- Scripts -->
     {{--    <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script> --}}
     {{--    <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script> --}}

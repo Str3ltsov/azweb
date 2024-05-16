@@ -5,5 +5,6 @@ return [
     'pages' => 'Pages',
     'contacts' => 'Contacts',
     'messages' => 'Messages',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'adminMenu' => 'Admin menu',
 ];
