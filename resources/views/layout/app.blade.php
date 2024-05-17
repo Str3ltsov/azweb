@@ -13,7 +13,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
     @hasSection('title')
-        <title>@yield('title', __('inputs.title'))</title>
+        <title>
+            @yield('title', __('inputs.title')) - {{ config('app.name', 'AZWeb') }}
+        </title>
     @else
         <title>{{ config('app.name', 'AZWeb') }}</title>
     @endif
@@ -39,7 +41,7 @@
     @stack('styles')
 </head>
 
-<body style="min-height: 100vh; min-width: 100vw">
+<body style="height: 100%;">
     @include('layout.components.header')
     @include('layout.components.off_canvas')
     @if (request()->is('pages/*') || request()->url() == route('contacts'))

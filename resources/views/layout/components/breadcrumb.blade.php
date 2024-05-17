@@ -6,7 +6,7 @@
                 <!-- Breadcrumb Wrapper Start -->
                 <div class="breadcrumb-wrapper">
                     <h1 class="title">@yield('title', __('inputs.title'))</h1>
-                    <ul class="breadcrumb-list">
+                    <ul class="breadcrumb-list list-unstyled">
                         <li>
                             <a href="{{ route('mainPage') }}">{{ __('menu.home') }}</a>
                         </li>

@@ -8,4 +8,5 @@ return [
     'logout' => 'Logout',
     'adminMenu' => 'Admin menu',
     'home' => 'Home',
+    'language' => 'Language',
 ];

@@ -35,10 +35,10 @@
             style="transform: translate3d(0px, 0px, 0px); visibility: visible;">
             <img src="{{ asset('template/images/footer/shape/9.png') }}" alt="shape">
         </div>
-        <div class="shape10 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
+        {{-- <div class="shape10 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
             style="transform: translate3d(0px, 0px, 0px); visibility: visible;">
             <img src="{{ asset('template/images/footer/shape/10.png') }}" alt="shape">
-        </div>
+        </div> --}}
         <div class="shape11 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
             style="transform: translate3d(0px, 0px, 0px); visibility: visible;">
             <img src="{{ asset('template/images/footer/shape/11.png') }}" alt="shape">
@@ -69,7 +69,7 @@
                                     style="max-width: 15rem">
                             </a>
                         </div>
-                        <ul class="footer-widget-two-list-icon">
+                        <ul class="footer-widget-two-list-icon list-unstyled">
                             <li>
                                 <i class="fas fa-map-marker-alt me-1"></i>
                                 <span>{{ $contacts[4]->description }}</span>
@@ -83,7 +83,7 @@
                                 <span>{{ $contacts[3]->description }} </span>
                             </li>
                         </ul>
-                        {{-- <ul class="social-icon d-flex flex-start">
+                        {{-- <ul class="social-icon d-flex flex-start list-unstyled">
                             <li>
                                 <a href="https://www.facebook.com/" class="facebook"><i
                                         class="fab fa-facebook-f"></i></a>
@@ -103,14 +103,14 @@
                     </div>
                     <!-- Footer Widget End -->
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-30 wow fadeIn" data-wow-duration="1.5s"
-                    data-wow-delay=".3s" style="visibility: visible;">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s"
+                    style="visibility: visible;">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget-two">
                         <div class="widget-list-wrapper">
                             <div class="widget-list-single">
                                 <h5 class="footer-widget-two-title">{{ __('menu.menu') }}</h5>
-                                <ul class="footer-widget-two-list">
+                                <ul class="footer-widget-two-list list-unstyled">
                                     @foreach ($pages as $page)
                                         <li class="menu-last">
                                             <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
@@ -130,7 +130,7 @@
                             <div class="widget-list-wrapper">
                                 <div class="widget-list-single">
                                     <h5 class="footer-widget-two-title">{{ __('menu.adminMenu') }}</h5>
-                                    <ul class="footer-widget-two-list">
+                                    <ul class="footer-widget-two-list list-unstyled">
                                         <li>
                                             <a href="{{ route('puslapiai.index') }}">
                                                 {{ __('menu.pages') }}
@@ -185,7 +185,7 @@
                             {{ __('footer.allRightsReserved') . ' © 2024 "MB Azweb"' }}
                         </p>
 
-                        {{-- <ul class="footer-two-bootm-list order-md-2 order-1">
+                        {{-- <ul class="footer-two-bootm-list order-md-2 order-1 list-unstyled">
                             <li><a href="contact.html">Terms &amp; Condition</a></li>
                             <li><a href="contact.html">Privecy Policy</a></li>
                             <li><a href="contact.html">Legal</a></li>

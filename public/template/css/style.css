@@ -106,10 +106,6 @@ ul {
     padding: 0px;
 }
 
-li {
-    list-style: none;
-}
-
 p {
     font-size: 16px;
     font-weight: normal;
@@ -5189,6 +5185,10 @@ hr {
 .about-two-text .btn-style-one {
     margin-top: 20px;
     display: inline-block;
+}
+
+.about-two-text ul {
+    list-style-image: url("../../template/images/icon/checked.png");
 }
 .about-two .shape {
     position: absolute;

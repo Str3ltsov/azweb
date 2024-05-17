@@ -8,4 +8,5 @@ return [
     'logout' => 'Atsijungti',
     'adminMenu' => 'Admin meniu',
     'home' => 'Pagrindinis',
+    'language' => 'Kalba',
 ];

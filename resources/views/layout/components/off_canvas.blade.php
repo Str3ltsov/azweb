@@ -16,7 +16,7 @@
     <div class="offcanvas-body">
         <!-- mobile menu navigation start -->
         <nav>
-            <ul class="mobile-menu">
+            <ul class="mobile-menu list-unstyled">
                 @foreach ($pages as $page)
                     <li>
                         <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
@@ -32,11 +32,7 @@
                         <i class="fas fa-angle-down"></i>
                     </span>
                     <a href="javascript:void(0)">
-                        @foreach (config('app.locales') as $key => $locale)
-                            @if ($key == app()->getLocale())
-                                {{ $locale }}
-                            @endif
-                        @endforeach
+                        {{ __('menu.language') }}
                     </a>
                     <ul class="dropdown" style="display: none;">
                         @foreach (config('app.locales') as $key => $locale)

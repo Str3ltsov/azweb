@@ -16,7 +16,7 @@
                         <!-- Header Menu Start -->
                         <div class="d-none d-lg-flex header-right_menu">
                             <nav class="main-menu">
-                                <ul>
+                                <ul class='list-unstyled'>
                                     @foreach ($pages as $page)
                                         <li>
                                             <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
@@ -24,13 +24,10 @@
                                     @endforeach
                                     <li class="has-children">
                                         <a href="javascript:void(0)">
-                                            @foreach (config('app.locales') as $key => $locale)
-                                                @if ($key == app()->getLocale())
-                                                    {{ $locale }}
-                                                @endif
-                                            @endforeach
+                                            {{ __('menu.language') }}
+                                            <i class="fas fa-solid fa-angle-down"></i>
                                         </a>
-                                        <ul class="sub-menu">
+                                        <ul class="sub-menu list-unstyled">
                                             @foreach (config('app.locales') as $key => $locale)
                                                 <li>
                                                     <a href="/{{ $key }}">
