@@ -15,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        if (config('app.env') == 'production')
+            $this->app->bind('path.public', fn () => base_path('htdocs'));
     }
 
     /**
