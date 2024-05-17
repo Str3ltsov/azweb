@@ -22,6 +22,13 @@
                                             <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
                                         </li>
                                     @endforeach
+                                    @auth
+                                        <li>
+                                            <a href="{{ route('puslapiai.index') }}">
+                                                {{ __('buttons.adminPanel') }}
+                                            </a>
+                                        </li>
+                                    @endauth
                                     <li class="has-children">
                                         <a href="javascript:void(0)">
                                             {{ __('menu.language') }}
@@ -45,15 +52,9 @@
                         <!-- Header Actions Start -->
                         <div class="header-right_actions flex-center">
                             <div class="header-right_button header-button">
-                                @guest
-                                    <a class="btn-style-one" href="{{ route('contacts') }}">
-                                        <span>{{ __('buttons.contactUs') }}</span>
-                                    </a>
-                                @else
-                                    <a class="btn-style-one" href="{{ route('puslapiai.index') }}">
-                                        <span>{{ __('buttons.adminPanel') }}</span>
-                                    </a>
-                                @endguest
+                                <a class="btn-style-one" href="{{ route('contacts') }}">
+                                    <span>{{ __('buttons.contactUs') }}</span>
+                                </a>
                             </div>
 
                             <div class="hamburger d-block d-lg-none">

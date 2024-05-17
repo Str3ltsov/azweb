@@ -91,7 +91,9 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center logo" style="height: 0;">
-            <a class="brand-text font-weight-light" href="{{ url('/') }}">Solita</a>
+            <a class="brand-text font-weight-light" href="{{ url('/') }}">
+                {{ config('app.name', 'AZWeb') }}
+            </a>
         </div>
 
 
@@ -114,7 +116,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4" tabIndex="0">
             <div class="brand-link logo">
                 <a href="{{ url('/') }}" class="brand-text pl-2" style="font-size: 1.8rem">
-                    <img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="50">
+                    <img src="{{ asset('images/azweb_logo.jpeg') }}" alt="{{ config('app.name', 'AZWeb') }}"
+                        style="max-width: 13.5rem">
                 </a>
             </div>
             <div class="sidebar">

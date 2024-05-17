@@ -7,12 +7,12 @@ use Error;
 
 class BlockService extends ImageService
 {
-    public final function getBlocks(): object
+    public function getBlocks(): object
     {
         return Block::all()->sortBy('order');
     }
 
-    public final function getBlockById(int $id): object
+    public function getBlockById(int $id): object
     {
         $block = Block::find($id);
 
@@ -21,7 +21,7 @@ class BlockService extends ImageService
         return $block;
     }
 
-    public final function createBlock(array $validated, string $imagePath): void
+    public function createBlock(array $validated, string $imagePath): void
     {
         Block::create([
             'lt' => [
@@ -43,7 +43,7 @@ class BlockService extends ImageService
         ]);
     }
 
-    public final function updateBlock(object $block, array $validated, ?string $imagePath): void
+    public function updateBlock(object $block, array $validated, ?string $imagePath): void
     {
         foreach (config('translatable.locales') as $locale) {
             $block->translate($locale)->name = $validated["name_$locale"];

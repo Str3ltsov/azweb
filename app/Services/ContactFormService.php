@@ -7,12 +7,12 @@ use Error;
 
 class ContactFormService extends ImageService
 {
-    public final function getContactForms(): object
+    public function getContactForms(): object
     {
         return ContactForm::all();
     }
 
-    public final function getContactFormById(int $id): object
+    public function getContactFormById(int $id): object
     {
         $contactForm = ContactForm::find($id);
 

@@ -59,7 +59,7 @@
     <div class="footer-two">
         <div class="container">
             <div class="row mb-n30">
-                <div class="@auth col-lg-3 @else col-lg-6 @endauth col-md-6 col-sm-6 mb-30 wow fadeIn"
+                <div class="@auth col-lg-3 @else col-lg-5 @endauth col-md-6 col-sm-6 mb-30 wow fadeIn"
                     data-wow-duration="1.5s" data-wow-delay=".1s" style="visibility: visible;">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget-two">
