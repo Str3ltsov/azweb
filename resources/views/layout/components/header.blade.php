@@ -1,4 +1,4 @@
-<header class="header-wrapper-two header-four sticky-header">
+<header class="header-wrapper-two header-two sticky-header">
     <div class="container">
         <div class="row">
             <div class="col-12">

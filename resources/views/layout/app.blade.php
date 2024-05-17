@@ -42,6 +42,9 @@
 <body style="min-height: 100vh; min-width: 100vw">
     @include('layout.components.header')
     @include('layout.components.off_canvas')
+    @if (request()->is('pages/*') || request()->url() == route('contacts'))
+        @include('layout.components.breadcrumb')
+    @endif
     @yield('content')
     @include('layout.components.footer')
     @include('layout.components.scroll_top')
