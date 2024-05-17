@@ -162,4 +162,27 @@
             </div>
         </div>
     </div>
+    @include('main.blocks')
 @endsection
+
+@push('styles')
+    <style>
+        .about-two-images {
+            height: fit-content;
+        }
+
+        .about-two-text ol li,
+        .about-two-text ul li {
+            font-size: 16px;
+            font-weight: normal;
+            color: #717788;
+            margin-bottom: 10px;
+            margin-left: 23px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .about-two-text p {
+            line-height: 1.9rem;
+        }
+    </style>
+@endpush

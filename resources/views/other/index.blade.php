@@ -55,7 +55,7 @@
             font-weight: normal;
             color: #717788;
             margin-bottom: 10px;
-            margin-left: 40px;
+            margin-left: 23px;
             font-family: "Open Sans", sans-serif;
         }
 
