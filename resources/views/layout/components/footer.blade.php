@@ -168,7 +168,7 @@
                     <div class="footer-widget-two">
                         <div class="widget-list-wrapper">
                             <div class="widget-list-single">
-                                <h5 class="footer-widget-two-title">{{ __('footer.contacts') }}</h5>
+                                <h5 class="footer-widget-two-title">{{ __('pages.stayConnected') }}</h5>
                                 <a href="{{ route('contacts') }}" class="btn btn-style-one" type="submit">
                                     <span>{{ __('buttons.contactUs') }}</span>
                                 </a>

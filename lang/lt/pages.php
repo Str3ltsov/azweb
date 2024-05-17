@@ -12,6 +12,7 @@ return [
     'contactUs' => 'Susisiekite su mumis',
     'contacts' => 'Kontaktai',
     'editContact' => 'Redaguoti kontaktą',
+    'stayConnected' => 'Palaikykite ryšį',
 
     // Pages page
     'pages' => 'Puslapiai',

@@ -5,12 +5,12 @@
             <div class="col-12 align-items-center text-center">
                 <!-- Breadcrumb Wrapper Start -->
                 <div class="breadcrumb-wrapper">
-                    <h1 class="title">{{ $title ?? __('names.title') }}</h1>
+                    <h1 class="title">@yield('title', __('inputs.title'))</h1>
                     <ul class="breadcrumb-list">
                         <li>
-                            <a href="{{ route('mainPage') }}">{{ __('mainPage') }}</a>
+                            <a href="{{ route('mainPage') }}">{{ __('menu.home') }}</a>
                         </li>
-                        <li><span>{{ $title ?? __('names.title') }}</span></li>
+                        <li><span>@yield('title', __('inputs.title'))</span></li>
                     </ul>
                 </div>
                 <!-- Breadcrumb Wrapper End -->

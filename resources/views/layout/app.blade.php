@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
     @hasSection('title')
-        <title>{{ $title }}</title>
+        <title>@yield('title', __('inputs.title'))</title>
     @else
         <title>{{ config('app.name', 'AZWeb') }}</title>
     @endif

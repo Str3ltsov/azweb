@@ -7,4 +7,5 @@ return [
     'messages' => 'Pranešimai',
     'logout' => 'Atsijungti',
     'adminMenu' => 'Admin meniu',
+    'home' => 'Pagrindinis',
 ];

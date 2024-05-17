@@ -12,6 +12,7 @@ return [
     'contactUs' => 'Contact us',
     'contacts' => 'Contacts',
     'editContact' => 'Edit contact',
+    'stayConnected' => 'Stay Connected',
 
     // Pages page
     'pages' => 'Pages',

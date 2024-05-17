@@ -7,4 +7,5 @@ return [
     'messages' => 'Messages',
     'logout' => 'Logout',
     'adminMenu' => 'Admin menu',
+    'home' => 'Home',
 ];
