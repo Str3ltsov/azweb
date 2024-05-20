@@ -22,6 +22,14 @@ class ContactService
         return $contact;
     }
 
+    public function getContactsForFooter(): object
+    {
+        return Contact::take(3)
+            ->select('description')
+            ->orderByDesc('id')
+            ->get();
+    }
+
     public function updateContact(object $contact, array $validated): void
     {
         $contact->title = $validated['title'];

@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             View::composer('*', function ($view) use ($pService, $cService) {
                 $view->with([
                     'pages' => $pService->getPages(),
-                    'contacts' => $cService->getContacts()
+                    'footerContacts' => $cService->getContactsForFooter()
                 ]);
             });
         }

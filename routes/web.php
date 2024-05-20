@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', fn () => redirect()->route('mainPage'));
-Route::get('/pages', [PageController::class, 'mainPage'])->name('mainPage');
-Route::get('/pages/{route}', [PageController::class, 'otherPage'])->name('otherPage');
+Route::get('/p', [PageController::class, 'mainPage'])->name('mainPage');
+Route::get('/p/{route}', [PageController::class, 'otherPage'])->name('otherPage');
 Route::get('/kontaktai', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name('submitContactForm');
 

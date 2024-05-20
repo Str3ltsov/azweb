@@ -70,18 +70,18 @@
                             </a>
                         </div>
                         <ul class="footer-widget-two-list-icon list-unstyled">
-                            <li>
-                                <i class="fas fa-map-marker-alt me-1"></i>
-                                <span>{{ $contacts[4]->description }}</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <span>{{ $contacts[2]->description }}</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <span>{{ $contacts[3]->description }} </span>
-                            </li>
+                            @foreach ($footerContacts as $contact)
+                                <li>
+                                    @if ($loop->index == 0)
+                                        <i class="fas fa-map-marker-alt me-1"></i>
+                                    @elseif ($loop->index == 1)
+                                        <i class="fas fa-envelope"></i>
+                                    @elseif ($loop->index == 2)
+                                        <i class="fas fa-phone"></i>
+                                    @endif
+                                    <span>{{ $contact->description }}</span>
+                                </li>
+                            @endforeach
                         </ul>
                         {{-- <ul class="social-icon d-flex flex-start list-unstyled">
                             <li>
@@ -113,7 +113,7 @@
                                 <ul class="footer-widget-two-list list-unstyled">
                                     @foreach ($pages as $page)
                                         <li class="menu-last">
-                                            <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
+                                            <a href="{{ url("/p/$page->route") }}">{{ $page->name }}</a>
                                         </li>
                                     @endforeach
                                 </ul>

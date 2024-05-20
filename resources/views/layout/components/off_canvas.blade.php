@@ -19,7 +19,7 @@
             <ul class="mobile-menu list-unstyled">
                 @foreach ($pages as $page)
                     <li>
-                        <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
+                        <a href="{{ url("/p/$page->route") }}">{{ $page->name }}</a>
                     </li>
                 @endforeach
                 <li>
