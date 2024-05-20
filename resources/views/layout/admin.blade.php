@@ -203,7 +203,7 @@
                             <a href="#" class="nav-link">
                                 <i class="fa-solid fa-language ml-1 mr-2"></i>
                                 <p>
-                                    {{ config('app.locales.' . app()->getLocale()) }}
+                                    {{ __('menu.language') }}
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>

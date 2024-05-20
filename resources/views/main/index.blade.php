@@ -103,10 +103,12 @@
                 <div class="col-lg-6">
                     <!-- Hero Content Start -->
                     <div class="hero-content">
-                        <span class="subtitle">We Are Avers</span>
-                        <h2 class="title">Grow Your Business with Avers</h2>
-                        <p class="text">When the musics over turn off the light</p>
-                        <a href="service-details.html" class="btn-style-one"><span>Read More</span></a>
+                        <span class="subtitle">{{ __('other.infoAvailableSoon') }}</span>
+                        <h2 class="title">{{ __('other.infoAvailableSoon') }}</h2>
+                        <p class="text">{{ __('other.infoAvailableSoon') }}.</p>
+                        <a href="{{ route('otherPage', $pages[3]->route) }}" class="btn-style-one">
+                            <span>{{ __('buttons.services') }}</span>
+                        </a>
                     </div>
                     <!-- Hero Content End -->
                 </div>
@@ -123,13 +125,18 @@
                                     <span><i class="fas fa-star"></i></span>
                                     <span><i class="fas fa-star"></i></span>
                                 </div>
-                                <p class="hero-facts-info-text">Pore et dolore magna cita tion laboris nisi uot aliq uip
+                                <p class="hero-facts-info-text">
+                                    {{ __('other.infoAvailableSoon') }}.
                                 </p>
-                                <h5 class="hero-facts-client-name">- Bruce Wayne</h5>
+                                <h5 class="hero-facts-client-name">
+                                    - {{ __('other.infoAvailableSoon') }}
+                                </h5>
                             </div>
                             <div class="hero-facts-client">
                                 <img src="{{ asset('template/images/slider/slider3-2.png') }}" alt="">
-                                <h5 class="hero-facts-client-name">Natasha P.</h5>
+                                <h5 class="hero-facts-client-name">
+                                    {{ __('other.infoAvailableSoon') }}
+                                </h5>
                             </div>
                             <div class="hero-facts-shape1">
                                 <img src="{{ asset('template/images/slider/sliderthree-shape/shape18.png') }}"

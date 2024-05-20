@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-12 text-left">
                                 <button class="btn btn-style-one" type="submit">
-                                    <span>{{ __('buttons.send') }}</span>
+                                    <span>{{ __('buttons.login') }}</span>
                                 </button>
                             </div>
                         </div>
