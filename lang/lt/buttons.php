@@ -3,7 +3,7 @@
 return [
     // Guest
     'contactUs' => 'Susisiekite',
-    'services' => 'Paslaugos',
+    'seeMore' => 'Plačiau',
     'send' => 'Siųsti',
 
     // Admin

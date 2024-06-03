@@ -73,11 +73,15 @@
                             @foreach ($footerContacts as $contact)
                                 <li>
                                     @if ($loop->index == 0)
-                                        <i class="fas fa-map-marker-alt me-1"></i>
+                                        <i class="fas fa-solid fa-building"></i>
                                     @elseif ($loop->index == 1)
-                                        <i class="fas fa-envelope"></i>
+                                        <i class="fas fa-solid fa-piggy-bank"></i>
                                     @elseif ($loop->index == 2)
                                         <i class="fas fa-phone"></i>
+                                    @elseif ($loop->index == 3)
+                                        <i class="fas fa-envelope"></i>
+                                    @elseif ($loop->index == 4)
+                                        <i class="fas fa-map-marker-alt me-1"></i>
                                     @endif
                                     <span>{{ $contact->description }}</span>
                                 </li>

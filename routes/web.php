@@ -34,6 +34,7 @@ Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name
  * Admin routes
  */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', fn () => redirect()->route('puslapiai.index'));
     Route::resource('puslapiai', AdminPageController::class)->except(['show']);
     Route::prefix('/puslapiai')->group(function () {
         Route::get('/{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');

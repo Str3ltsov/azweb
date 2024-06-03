@@ -3,7 +3,7 @@
 return [
     // Guest
     'contactUs' => 'Contact Us',
-    'services' => 'Services',
+    'seeMore' => 'See more',
     'send' => 'Send',
 
     // Admin

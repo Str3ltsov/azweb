@@ -103,11 +103,14 @@
                 <div class="col-lg-6">
                     <!-- Hero Content Start -->
                     <div class="hero-content">
-                        <span class="subtitle">{{ __('other.infoAvailableSoon') }}</span>
-                        <h2 class="title">{{ __('other.infoAvailableSoon') }}</h2>
-                        <p class="text">{{ __('other.infoAvailableSoon') }}.</p>
+                        <span class="subtitle"></span>
+                        <h2 class="title">{{ __('pages.mainTitle') }}</h2>
+                        <p class="text">
+                            {{ __('pages.mainParagraph1') }}</br>
+                            {{ __('pages.mainParagraph2') }}
+                        </p>
                         <a href="{{ route('otherPage', $pages[3]->route) }}" class="btn-style-one">
-                            <span>{{ __('buttons.services') }}</span>
+                            <span>{{ __('buttons.seeMore') }}</span>
                         </a>
                     </div>
                     <!-- Hero Content End -->
@@ -117,37 +120,8 @@
                     <div class="hero-image-wrapper">
                         <!-- Hero Facts Start -->
                         <div class="hero-facts">
-                            <div class="hero-facts-info">
-                                <div class="hero-facts-info-review">
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                    <span><i class="fas fa-star"></i></span>
-                                </div>
-                                <p class="hero-facts-info-text">
-                                    {{ __('other.infoAvailableSoon') }}.
-                                </p>
-                                <h5 class="hero-facts-client-name">
-                                    - {{ __('other.infoAvailableSoon') }}
-                                </h5>
-                            </div>
-                            <div class="hero-facts-client">
-                                <img src="{{ asset('template/images/slider/slider3-2.png') }}" alt="">
-                                <h5 class="hero-facts-client-name">
-                                    {{ __('other.infoAvailableSoon') }}
-                                </h5>
-                            </div>
                             <div class="hero-facts-shape1">
                                 <img src="{{ asset('template/images/slider/sliderthree-shape/shape18.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="hero-facts-shape2">
-                                <img src="{{ asset('template/images/slider/sliderthree-shape/shape11.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="hero-facts-shape3">
-                                <img src="{{ asset('template/images/slider/sliderthree-shape/shape16.png') }}"
                                     alt="">
                             </div>
                             <div class="hero-facts-shape4">
@@ -157,10 +131,9 @@
                         </div>
                         <!-- Hero Facts End -->
                         <!-- Hero Images Start -->
-                        <div class="hero-image">
-                            <img class="js-tilt" src="{{ asset('template/images/slider/slider3-1.png') }}"
-                                alt="HeroImage"
-                                style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg);">
+                        <div class="hero-image mb-5 mb-md-0 pb-5 pb-md-0">
+                            <img class="js-tilt" src="{{ asset('images/main.png') }}" alt="HeroImage"
+                                style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg); width: 98%;">
                         </div>
                         <!-- Hero Images End -->
                     </div>

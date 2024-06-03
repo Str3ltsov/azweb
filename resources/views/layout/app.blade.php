@@ -8,7 +8,7 @@
     <meta name="keywords" content="azweb, az web">
     <meta name="robots" content="noindex, follow">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/images/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('template/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/sss/plugins/odometer-theme-default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/plugins/odometer-theme-default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/fancybox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/magnific-pupup.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">

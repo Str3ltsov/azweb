@@ -22,22 +22,33 @@
                                             <a href="{{ url("/p/$page->route") }}">{{ $page->name }}</a>
                                         </li>
                                     @endforeach
-                                    @auth
-                                        <li>
-                                            <a href="{{ route('puslapiai.index') }}">
-                                                {{ __('buttons.adminPanel') }}
-                                            </a>
-                                        </li>
-                                    @endauth
                                     <li class="has-children">
                                         <a href="javascript:void(0)">
-                                            {{ __('menu.language') }}
+                                            @foreach (config('app.locales') as $key => $locale)
+                                                @if ($key == app()->getLocale())
+                                                    @if ($key == 'lt')
+                                                        <img src="{{ asset('images/flags/lt.png') }}" alt="LT"
+                                                            style="width: 20%; padding-right: 4px;">
+                                                    @elseif ($key == 'en')
+                                                        <img src="{{ asset('images/flags/gb.png') }}" alt="GB"
+                                                            style="width: 20%; padding-right: 4px;">
+                                                    @endif
+                                                    {{ $locale }}
+                                                @endif
+                                            @endforeach
                                             <i class="fas fa-solid fa-angle-down"></i>
                                         </a>
                                         <ul class="sub-menu list-unstyled">
                                             @foreach (config('app.locales') as $key => $locale)
                                                 <li>
                                                     <a href="/{{ $key }}">
+                                                        @if ($key == 'lt')
+                                                            <img src="{{ asset('images/flags/lt.png') }}" alt="LT"
+                                                                style="width: 15%; padding-right: 4px;">
+                                                        @elseif ($key == 'en')
+                                                            <img src="{{ asset('images/flags/gb.png') }}" alt="GB"
+                                                                style="width: 15%; padding-right: 4px;">
+                                                        @endif
                                                         {{ $locale }}
                                                     </a>
                                                 </li>
