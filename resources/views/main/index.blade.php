@@ -1,7 +1,9 @@
 @extends('layout.app')
 
+@section('title', $page->name)
+
 @section('content')
-    <main>
+    {{-- <main>
         <div class="banner5-area pos-rel fix bg-css" data-background="assets/img/hero/globe-bg.jpg"
             style="background-image: url(&quot;assets/img/hero/globe-bg.jpg&quot;);">
             <div class="slider5-height d-flex align-items-center">
@@ -18,8 +20,8 @@
                                     {{ __('pages.mainTitle') }}
                                 </h2>
                                 <!--<div class="banner5-text wow fadeInUp mb-115" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                                                            <p>UAB "Solita" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas. </p>
-                                                        </div>-->
+                                                                <p>UAB "Solita" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas. </p>
+                                                            </div>-->
                                 <div class="banner5-btn wow fadeInUp" data-wow-delay=".9s"
                                     style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
                                     <div class="et-btn-5">
@@ -63,5 +65,104 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main> --}}
+    <div class="hero">
+        <div class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15"
+            style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: inherit;">
+            <div class="hero-shape shape-1" style="transform: translate3d(0px, 0px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape1.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-2" style="transform: translate3d(0px, 0px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape2.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-3" data-depth="0.04" style="transform: translate3d(-3.4px, 2.6px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape3.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-4" data-depth="0.08" style="transform: translate3d(-6.7px, 5.2px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape4.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-5" data-depth="0.04" style="transform: translate3d(-3.4px, 2.6px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape5.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-6" data-depth="0.04" style="transform: translate3d(-3.4px, 2.6px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape6.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-7" data-depth="0.14" style="transform: translate3d(-11.7px, 9.1px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape7.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-8" data-depth="0.08" style="transform: translate3d(-6.7px, 5.2px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape8.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-9" data-depth="0.10" style="transform: translate3d(-8.4px, 6.5px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape9.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-10" data-depth="0.14" style="transform: translate3d(-11.7px, 9.1px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape10.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-12" style="transform: translate3d(0px, 0px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape12.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-13" style="transform: translate3d(0px, 0px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape13.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-14" data-depth="0.08" style="transform: translate3d(-6.7px, 5.2px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape14.png') }}" alt="Shape"></div>
+            <div class="hero-shape shape-15" data-depth="0.08" style="transform: translate3d(-6.7px, 5.2px, 0px);"><img
+                    src="{{ asset('template/images/slider/sliderthree-shape/shape15.png') }}" alt="Shape"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Hero Content Start -->
+                    <div class="hero-content">
+                        <span class="subtitle"></span>
+                        <h2 class="title">{{ __('pages.mainTitle') }}</h2>
+                        <p class="text">
+                            {{ __('pages.mainParagraph1') }}</br>
+                            {{ __('pages.mainParagraph2') }}
+                        </p>
+                        <a href="{{ route('otherPage', $pages[3]->route) }}" class="btn-style-one">
+                            <span>{{ __('buttons.seeMore') }}</span>
+                        </a>
+                    </div>
+                    <!-- Hero Content End -->
+                </div>
+                <div class="col-lg-6">
+                    <!-- Image Wrapper Start -->
+                    <div class="hero-image-wrapper">
+                        <!-- Hero Facts Start -->
+                        <div class="hero-facts">
+                            <div class="hero-facts-shape1">
+                                <img src="{{ asset('template/images/slider/sliderthree-shape/shape18.png') }}"
+                                    alt="">
+                            </div>
+                            <div class="hero-facts-shape4">
+                                <img src="{{ asset('template/images/slider/sliderthree-shape/shape17.png') }}"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- Hero Facts End -->
+                        <!-- Hero Images Start -->
+                        <div class="hero-image mb-5 mb-md-0 pb-5 pb-md-0">
+                            <img class="js-tilt" src="{{ asset('images/main.png') }}" alt="HeroImage"
+                                style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg); width: 98%;">
+                        </div>
+                        <!-- Hero Images End -->
+                    </div>
+                    <!-- Image Wrapper End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    @include('main.blocks')
 @endsection
+
+@push('styles')
+    <style>
+        .about-two-images {
+            height: fit-content;
+        }
+
+        .about-two-text ol li,
+        .about-two-text ul li {
+            font-size: 16px;
+            font-weight: normal;
+            color: #717788;
+            margin-bottom: 10px;
+            margin-left: 23px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .about-two-text p {
+            line-height: 1.9rem;
+        }
+    </style>
+@endpush

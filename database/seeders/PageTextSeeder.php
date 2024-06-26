@@ -55,12 +55,12 @@ class PageTextSeeder extends Seeder
             [
                 'page_id' => PageEnum::KONTAKTAI,
                 'html_text' => htmlentities("
-                    <span>UAB \"Solita\"</span>
-                    <span>Įmonės kodas 304764201</span>
-                    <span>PVM mokėtojo kodas LT100011832719</span>
-                    <span>Adresas: Taikos pr. 88a, 51182 Kaunas</span>
-                    <span>El. paštas: <a href=\"mailto:info@solita.lt\">info@solita.lt</a></span>
-                    <span>Tel.: +370 372 47749</span>
+                    <span>MB \"Azweb\"</span>
+                    <span>Įmonės kodas 304943026</span>
+                    <span>PVM mokėtojo kodas LT100012022615</span>
+                    <span>Adresas: Lithuania</span>
+                    <span>El. paštas: info@azweb.lt</span>
+                    <span>Tel.: +37068641420</span>
                 ", ENT_QUOTES)
             ]
         ]);

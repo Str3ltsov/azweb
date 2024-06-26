@@ -5,5 +5,8 @@ return [
     'pages' => 'Puslapiai',
     'contacts' => 'Kontaktai',
     'messages' => 'Pranešimai',
-    'logout' => 'Atsijungti'
+    'logout' => 'Atsijungti',
+    'adminMenu' => 'Admin meniu',
+    'home' => 'Pagrindinis',
+    'language' => 'Kalba',
 ];

@@ -7,12 +7,12 @@ use Error;
 
 class PageService extends ImageService
 {
-    public final function getPages(): object
+    public function getPages(): object
     {
         return Page::all();
     }
 
-    public final function getPageByRoute(string $route): object
+    public function getPageByRoute(string $route): object
     {
         $page = Page::where('route', $route)->first();
 
@@ -21,7 +21,7 @@ class PageService extends ImageService
         return $page;
     }
 
-    public final function getPageById(int $id): object
+    public function getPageById(int $id): object
     {
         $page = Page::find($id);
 
@@ -51,7 +51,7 @@ class PageService extends ImageService
         ]);
     }
 
-    public final function updatePage(object $page, array $validated, ?string $imagePath): void
+    public function updatePage(object $page, array $validated, ?string $imagePath): void
     {
         foreach (config('translatable.locales') as $locale) {
             $page->translate($locale)->name = $validated["name_$locale"];

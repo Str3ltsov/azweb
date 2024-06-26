@@ -8,11 +8,17 @@
     <meta name="keywords" content="azweb, az web">
     <meta name="robots" content="noindex, follow">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/images/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
-    <title>{{ config('app.name', 'AZWeb') }}</title>
+    @hasSection('title')
+        <title>
+            @yield('title', __('inputs.title')) - {{ config('app.name', 'AZWeb') }}
+        </title>
+    @else
+        <title>{{ config('app.name', 'AZWeb') }}</title>
+    @endif
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('template/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/sss/plugins/odometer-theme-default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/plugins/odometer-theme-default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/fancybox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/plugins/magnific-pupup.css') }}">
     <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
@@ -35,25 +41,21 @@
     @stack('styles')
 </head>
 
-<body style="min-height: 100vh; min-width: 100vw">
-    <!-- Preloader -->
-    @include('layout.preloader')
-    <!-- Offcanvas area -->
-    @include('layout.off_canvas_area')
-    <!-- Header -->
-    @include('layout.header')
-    <!-- Main content -->
+<body style="height: 100%;">
+    @include('layout.components.header')
+    @include('layout.components.off_canvas')
+    @if (request()->is('pages/*') || request()->url() == route('contacts'))
+        @include('layout.components.breadcrumb')
+    @endif
     @yield('content')
-    <!-- Footer -->
-    @include('layout.footer')
-    <!-- Back to top -->
-    @include('layout.back_to_top')
+    @include('layout.components.footer')
+    @include('layout.components.scroll_top')
     <!-- Scripts -->
     {{--    <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script> --}}
     {{--    <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script> --}}
     {{--    <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script> --}}
     {{--    <script src="{{ asset('ckeditor5-36.0.1-8lty87utdzw3/build/ckeditor.js') }}"></script> --}}
-    <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>
+    {{--    <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script> --}}
     <script src="{{ asset('template/js/vendor/modernizr-3.11.7.min.js') }}"></script>
     <script src="{{ asset('template/js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('template/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>

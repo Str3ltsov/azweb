@@ -24,26 +24,27 @@ use Illuminate\Support\Facades\Route;
  * Guest routes
  */
 
-Route::get('', fn () => redirect()->route('mainPage'));
-Route::get('pages', [PageController::class, 'mainPage'])->name('mainPage');
-Route::get('pages/{route}', [PageController::class, 'otherPage'])->name('otherPage');
+Route::get('/', fn () => redirect()->route('mainPage'));
+Route::get('/p', [PageController::class, 'mainPage'])->name('mainPage');
+Route::get('/p/{route}', [PageController::class, 'otherPage'])->name('otherPage');
 Route::get('/kontaktai', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name('submitContactForm');
 
 /*
  * Admin routes
  */
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', fn () => redirect()->route('puslapiai.index'));
     Route::resource('puslapiai', AdminPageController::class)->except(['show']);
-    Route::prefix('puslapiai/')->group(function () {
-        Route::get('{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');
-        Route::post('{id}/edit/add_block', [AdminBlockController::class, 'addBlockSave'])->name('addBlockSave');
-        Route::get('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlock'])->name('editBlock');
-        Route::put('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlockSave'])->name('editBlockSave');
-        Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
+    Route::prefix('/puslapiai')->group(function () {
+        Route::get('/{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');
+        Route::post('/{id}/edit/add_block', [AdminBlockController::class, 'addBlockSave'])->name('addBlockSave');
+        Route::get('/{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlock'])->name('editBlock');
+        Route::put('/{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlockSave'])->name('editBlockSave');
+        Route::delete('/{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
     });
-    Route::resource('kontaktai', AdminContactController::class)->only(['index', 'edit', 'update']);
-    Route::resource('pranesimai', AdminMessagesController::class)->only(['index', 'destroy']);
+    Route::resource('/kontaktai', AdminContactController::class)->only(['index', 'edit', 'update']);
+    Route::resource('/pranesimai', AdminMessagesController::class)->only(['index', 'destroy']);
 });
 
 
@@ -56,7 +57,7 @@ Auth::routes([
     'verify' => false
 ]);
 
-Route::get('logout', function () {
+Route::get('/logout', function () {
     Auth::logout();
     return back()->with('success', __('Sėkmingai atsijungėte'));
 })->name('getLogout');

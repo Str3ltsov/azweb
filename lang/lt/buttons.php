@@ -2,8 +2,8 @@
 
 return [
     // Guest
-    'contactUs' => 'Susisiekite su mumis',
-    'services' => 'Paslaugos',
+    'contactUs' => 'Susisiekite',
+    'seeMore' => 'Plačiau',
     'send' => 'Siųsti',
 
     // Admin

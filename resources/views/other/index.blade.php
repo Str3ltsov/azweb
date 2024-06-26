@@ -1,52 +1,66 @@
 @extends('layout.app')
 
+@section('title', $page->name)
+
 @section('content')
-    <main>
-        <section class="about__area pt-120 pb-60">
-            <div class="container">
-                <div class="row align-items-start wow fadeInUp" data-wow-delay=".3s"
-                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="col-xl-5 col-lg-4">
-                        <div class="about__left-one p-relative mb-60">
-                            <div class="about__left-thumb">
-                                <img src="{{ asset($page->image) }}" alt="{{ $page->name }}">
-                            </div>
+    <div class="section-padding about-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <!-- About Images Start -->
+                    <div class="about-two-images me-0">
+                        <div class="about-two-images-one">
+                            <img class="js-tilt"
+                                src="{{ $page->image ? asset($page->image) : asset('template/images/about/about-4.png') }}"
+                                alt="{{ $page->name }}"
+                                style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg);">
                             @if ($page->show_experience)
-                                <div class="about__experience-shape">
-                                    <div class="about__experience-content">
-                                        <h2>{{ $page->experience_years }}</h2>
-                                        <span>{{ __('pages.experienceYears') }}</span>
-                                        <div class="about__experience-shape-icon">
-                                            <i class="fal fa-trophy-alt"></i>
-                                        </div>
-                                    </div>
+                                <div class="about-two-images-thumb gradient-2 text-center">
+                                    <span class="text"
+                                        style="max-width: min-content; line-height: calc(1rem + .5rem)">{{ __('pages.experienceYears') }}</span>
+                                    <span class="date">{{ $page->experience_years }}</span>
                                 </div>
                             @endif
                         </div>
                     </div>
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="about__right-content mb-60">
-                            <div class="section__title-one mb-35">
-                                <span>// {{ $page->name }}</span>
-                                <h2>{{ $page->title }}</h2>
-                            </div>
-                            <div class="about__description-text">
-                                <div class="bd-ud-app-check-list mb-25">
-                                    {!! $page->text !!}
-                                </div>
-                            </div>
+                    <!-- About Images End -->
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <!-- Heading Start -->
+                    <div class="heading-one">
+                        <span class="heading-one-subtitle">{{ $page->name }}</span>
+                        <h2 class="heading-one-title">{{ $page->title }}</h2>
+                        <div class="about-two-text">
+                            {!! $page->text !!}
                         </div>
                     </div>
+                    <!-- Heading End -->
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 @endsection
 
-@push('scripts')
-    <script>
-        const h4 = document.querySelector('.about__description-text').querySelector('h4')
+@push('styles')
+    <style>
+        .about-two-images {
+            height: fit-content;
+        }
 
-        h4.classList.add('pb-10')
-    </script>
+        .about-two-text ol li,
+        .about-two-text ul li {
+            font-size: 16px;
+            font-weight: normal;
+            color: #717788;
+            margin-bottom: 10px;
+            margin-left: 23px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .about-two-text p {
+            line-height: 1.9rem;
+        }
+    </style>
 @endpush

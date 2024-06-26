@@ -40,7 +40,10 @@ class ContactController extends Controller
 
             return back()->with('success', __('messages.successContactForm'));
         } catch (Exception $exception) {
-            return back()->with('error', $exception->getMessage());
+            if (config('app.env') == 'production')
+                return back()->with('error', $exception->getMessage());
+            else
+                throw $exception;
         }
     }
 }

@@ -4,7 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'solita') }}</title>
+    <meta name="description" content="{{ __('other.websiteDescription') }}">
+    <meta name="keywords" content="azweb, az web">
+    <meta name="robots" content="noindex, follow">
+
+    <title>{{ __('buttons.adminPanel') . ' - ' . config('app.name', 'AZWeb') }}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -91,7 +98,9 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center logo" style="height: 0;">
-            <a class="brand-text font-weight-light" href="{{ url('/') }}">Solita</a>
+            <a class="brand-text font-weight-light" href="{{ url('/') }}">
+                {{ config('app.name', 'AZWeb') }}
+            </a>
         </div>
 
 
@@ -114,7 +123,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4" tabIndex="0">
             <div class="brand-link logo">
                 <a href="{{ url('/') }}" class="brand-text pl-2" style="font-size: 1.8rem">
-                    <img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="50">
+                    <img src="{{ asset('images/azweb_logo.jpeg') }}" alt="{{ config('app.name', 'AZWeb') }}"
+                        style="max-width: 13.5rem">
                 </a>
             </div>
             <div class="sidebar">
@@ -200,7 +210,11 @@
                             <a href="#" class="nav-link">
                                 <i class="fa-solid fa-language ml-1 mr-2"></i>
                                 <p>
-                                    {{ config('app.locales.' . app()->getLocale()) }}
+                                    @foreach (config('app.locales') as $key => $locale)
+                                        @if ($key == app()->getLocale())
+                                            {{ $locale }}
+                                        @endif
+                                    @endforeach
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -209,7 +223,9 @@
                                     <li class="nav-item">
                                         <a href="/{{ $key }}"
                                             class="nav-link @if ($key == app()->getLocale()) active @endif">
-                                            <p>{{ $locale }}</p>
+                                            <p>
+                                                {{ $locale }}
+                                            </p>
                                         </a>
                                     </li>
                                 @endforeach

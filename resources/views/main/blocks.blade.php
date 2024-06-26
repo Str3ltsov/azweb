@@ -1,69 +1,81 @@
 @foreach ($blocks as $block)
     @if ($block->block_type_id == \App\Enums\BlockTypeEnum::LEFT)
-        <section class="about__area pt-120 pb-60">
+        <div class="section-padding about-two">
             <div class="container">
-                <div class="row align-items-start wow fadeInUp" data-wow-delay=".3s"
-                    style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="col-xl-5 col-lg-4">
-                        <div class="about__left-one p-relative mb-60">
-                            <div class="about__left-thumb">
-                                <img src="{{ asset($block->image) }}" alt="{{ $block->name }}">
-                            </div>
-                            @if ($block->show_experience)
-                                <div class="about__experience-shape">
-                                    <div class="about__experience-content">
-                                        <h2>{{ $block->experience_years }}</h2>
-                                        <span>{{ __('pages.experienceYears') }}</span>
-                                        <div class="about__experience-shape-icon">
-                                            <i class="fal fa-trophy-alt"></i>
-                                        </div>
+                <div class="row">
+                    <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.1s; animation-name: fadeIn;">
+                        <!-- About Images Start -->
+                        <div class="about-two-images me-0">
+                            <div class="about-two-images-one">
+                                <img class="js-tilt"
+                                    src="{{ $block->image ? asset($block->image) : asset('template/images/about/about-4.png') }}"
+                                    alt="{{ $block->name }}"
+                                    style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg);">
+                                @if ($block->show_experience)
+                                    <div class="about-two-images-thumb gradient-2 text-center">
+                                        <span class="text"
+                                            style="max-width: min-content; line-height: calc(1rem + .5rem)">{{ __('pages.experienceYears') }}</span>
+                                        <span class="date">{{ $block->experience_years }}</span>
                                     </div>
-                                </div>
-                            @endif
+                                @endif
+                            </div>
                         </div>
+                        <!-- About Images End -->
                     </div>
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="about__right-content mb-60">
-                            <div class="section__title-one mb-35">
-                                <span>// {{ $block->name }}</span>
-                                <h2>{{ $block->title }}</h2>
-                            </div>
-                            <div class="about__description-text">
-                                <div class="bd-ud-app-check-list mb-25">
-                                    {!! htmlspecialchars_decode(nl2br($block->text)) !!}
-                                </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.3s; animation-name: fadeIn;">
+                        <!-- Heading Start -->
+                        <div class="heading-one">
+                            <span class="heading-one-subtitle">{{ $block->name }}</span>
+                            <h2 class="heading-one-title">{{ $block->title }}</h2>
+                            <div class="about-two-text">
+                                {!! htmlspecialchars_decode(nl2br($block->text)) !!}
                             </div>
                         </div>
+                        <!-- Heading End -->
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     @elseif ($block->block_type_id == \App\Enums\BlockTypeEnum::RIGHT)
-        <section class="skill__area skill__bg pt-120 pb-60" data-background="assets/img/bg/skill-map.png" data-wow-delay=".3s" style="background-image: url(&quot;assets/img/bg/skill-map.png&quot;);">
+        <div class="section-padding about-two">
             <div class="container">
-                <div class="row align-items-center wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="skill-progress mb-60">
-                            <div class="section__title-one s-3 mb-40">
-                                <span>// {{ $block->name }}</span>
-                                <h2>{{ $block->title }}</h2>
-                            </div>
-                            <div class="about__description-text">
-                                <div class="bd-ud-app-check-list mb-25">
-                                    {!! htmlspecialchars_decode(nl2br($block->text)) !!}
-                                </div>
+                <div class="row">
+                    <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.3s; animation-name: fadeIn;">
+                        <!-- Heading Start -->
+                        <div class="heading-one">
+                            <span class="heading-one-subtitle">{{ $block->name }}</span>
+                            <h2 class="heading-one-title">{{ $block->title }}</h2>
+                            <div class="about-two-text">
+                                {!! htmlspecialchars_decode(nl2br($block->text)) !!}
                             </div>
                         </div>
+                        <!-- Heading End -->
                     </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="skill__image-wrapper mb-60">
-                            <div class="skill__image pl-25 p-relative w-img">
-                                <img src="{{ asset($block->image) }}" alt="{{ $block->name }}">
+                    <div class="col-lg-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.1s; animation-name: fadeIn;">
+                        <!-- About Images Start -->
+                        <div class="about-two-images me-0">
+                            <div class="about-two-images-one">
+                                <img class="js-tilt"
+                                    src="{{ $block->image ? asset($block->image) : asset('template/images/about/about-4.png') }}"
+                                    alt="{{ $block->name }}"
+                                    style="will-change: transform; transform: perspective(3000px) rotateX(0deg) rotateY(0deg);">
+                                @if ($block->show_experience)
+                                    <div class="about-two-images-thumb gradient-2 text-center">
+                                        <span class="text"
+                                            style="max-width: min-content; line-height: calc(1rem + .5rem)">{{ __('pages.experienceYears') }}</span>
+                                        <span class="date">{{ $block->experience_years }}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
+                        <!-- About Images End -->
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     @endif
 @endforeach
