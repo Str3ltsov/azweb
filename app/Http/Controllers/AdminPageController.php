@@ -40,7 +40,11 @@ class AdminPageController extends Controller
             $imagePath = null;
 
             if (isset($validated['image'])) {
-                $dirPath = public_path() . '/images/uploads';
+                if (config('app.env') == 'production')
+                    $dirPath = base_path('htdocs') . '/images/uploads';
+                else
+                    $dirPath = public_path() . '/images/uploads';
+
                 $imageName = $this->pService->getImageName($validated['image']);
                 $imagePath = $this->pService->getImagePath($imageName);
 
@@ -76,7 +80,10 @@ class AdminPageController extends Controller
             $imagePath = null;
 
             if (isset($validated['image'])) {
-                $dirPath = public_path() . '/images/uploads';
+                if (config('app.env') == 'production')
+                    $dirPath = base_path('htdocs') . '/images/uploads';
+                else
+                    $dirPath = public_path() . '/images/uploads';
                 $imageName = $this->pService->getImageName($validated['image']);
                 $imagePath = $this->pService->getImagePath($imageName);
 
